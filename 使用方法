@@ -1,0 +1,58 @@
+前言：众所周知，primeNG是ng2的一个ui组件库，很强大，个人感觉比ng2-bootstrap还强大，下面就告诉大家怎么安装使用，官网：http://www.primefaces.org/pri...
+
+本人使用angular cli 创建项目，所以讲述在cli下的配置安装步骤，如果没有使用cli也不用担心，官网有具体的安装步骤。
+
+1、 安装
+
+cd 你的项目目录
+npm install primeng --save-dev
+2、 配置angular-cli.json
+
+"styles": [
+    "styles.css",
+    "../node_modules/primeng/resources/themes/omega/theme.css",
+    "../node_modules/primeng/resources/primeng.min.css",
+    "../node_modules/font-awesome/css/font-awesome.css"
+],
+
+需要注意的是系统中的所有小图标都使用font-awesome字体库，font-awesome.css是字体图标文件，需要安装
+
+npm install font-awosome --save
+3、使用，需要使用的组件，都要在app.module.ts中加载
+
+// 载入primeng模块
+import {AutoCompleteModule, TabViewModule, ButtonModule} from "primeng/primeng"
+
+......
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AutoCompleteModule,
+    ButtonModule,
+    TabViewModule
+  ],
+
+......
+4、模板中就可以使用模块中定义的组件了
+
+// 按钮
+<button pButton type="button" label="Click"></button>
+
+// 标签页
+<p-tabView>
+  <p-tabPanel header="Header 1">
+    Content 1
+  </p-tabPanel>
+  <p-tabPanel header="Header 2" [selected]="true" [closable]="true">
+    Content 2
+  </p-tabPanel>
+  <p-tabPanel header="Header 3">
+    Content 3
+  </p-tabPanel>
+</p-tabView>
