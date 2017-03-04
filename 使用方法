@@ -7,6 +7,7 @@
 cd 你的项目目录
 npm install primeng --save-dev
 2、 配置angular-cli.json
+omega是一种主题，还有很多主题，bootstrap等等......
 
 "styles": [
     "styles.css",
